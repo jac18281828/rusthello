@@ -9,3 +9,7 @@ USER jac
 ENV PATH=/home/jac/.cargo/bin:$PATH
 # source $HOME/.cargo/env
 RUN rustc --version
+
+RUN cargo build
+
+CMD cargo run
