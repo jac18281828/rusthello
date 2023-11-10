@@ -12,5 +12,5 @@ RUN rustc --version
 
 RUN cargo fmt --check
 RUN cargo clippy --all-features --no-deps
-RUN cargo build
+RUN cargo test
 CMD cargo run

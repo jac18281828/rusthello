@@ -26,9 +26,4 @@ mod tests {
             Err(_) => panic!("Test failed!"),
         }
     }
-
-    #[test]
-    fn panichello() {
-        panic!("Make this test fail");
-    }
 }
