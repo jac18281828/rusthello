@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "1yib.rust-bundle"
+        "lanza.lldb-vscode",
+        "1yib.rust-bundle",
+        "github.copilot"
     ]
 }
