@@ -1,0 +1,12 @@
+(in a b c x)
+(out y)
+(verify x y)
+
+(program
+    (= t1
+       (* a x x))
+    (= t2
+        (* b x))
+    (= y
+        (+ t1 t2 c))
+)
