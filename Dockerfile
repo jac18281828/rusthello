@@ -10,6 +10,8 @@ ENV PATH=/home/rust/.cargo/bin:$PATH
 # source $HOME/.cargo/env
 RUN rustc --version
 
+RUN yamlfmt -lint .github/workflows/*.yml
+
 RUN cargo fmt --check
 RUN cargo clippy --all-features --no-deps
 RUN cargo test
