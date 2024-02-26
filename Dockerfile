@@ -1,12 +1,12 @@
-FROM ghcr.io/jac18281828/rustdev:latest
+FROM ghcr.io/jac18281828/rust:latest
 
 ARG PROJECT=rusthello
 WORKDIR /workspaces/${PROJECT}
-COPY --chown=jac:jac . .
-ENV USER=jac
-USER jac
+COPY --chown=rust:rust . .
+ENV USER=rust
+USER rust
 
-ENV PATH=/home/jac/.cargo/bin:$PATH
+ENV PATH=/home/rust/.cargo/bin:$PATH
 # source $HOME/.cargo/env
 RUN rustc --version
 
