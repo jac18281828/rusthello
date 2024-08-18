@@ -1,15 +1,13 @@
-use std::io;
+use anyhow::Result;
 
-fn hello() -> Result<String, io::Error> {
+const fn hello() -> Result<&'static str> {
     let message = "Hello, world!";
-    println!("{}", message);
-    Ok(message.to_string())
+    Ok(message)
 }
 
 fn main() {
-    let result = hello();
-    match result {
-        Ok(_) => {}
+    match hello() {
+        Ok(msg) => println!("{}", msg),
         Err(error) => println!("Error: {}", error),
     }
 }
