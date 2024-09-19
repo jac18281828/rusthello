@@ -1,6 +1,14 @@
-use anyhow::Result;
+use std::result::Result;
 
-const fn hello() -> Result<&'static str> {
+struct Errorf;
+
+impl std::fmt::Display for Errorf {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        write!(f, "An error occurred!")
+    }
+}
+
+const fn hello() -> Result<&'static str, Errorf> {
     let message = "Hello, world!";
     Ok(message)
 }
