@@ -9,6 +9,11 @@ USER rust
 ENV PATH=/home/rust/.cargo/bin:$PATH
 # source $HOME/.cargo/env
 RUN rustup update && \
+    rustup install stable && \
+    rustup default stable && \
+    rustup component add \
+           clippy \
+           rustfmt && \
     rustc --version
 
 RUN yamlfmt -lint .github/workflows/*.yml
