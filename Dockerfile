@@ -8,7 +8,8 @@ USER rust
 
 ENV PATH=/home/rust/.cargo/bin:$PATH
 # source $HOME/.cargo/env
-RUN rustc --version
+RUN rustup update && \
+    rustc --version
 
 RUN yamlfmt -lint .github/workflows/*.yml
 

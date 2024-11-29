@@ -1,15 +1,18 @@
 use std::result::Result;
 
-struct Errorf;
+use thiserror::Error;
 
-impl std::fmt::Display for Errorf {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "An error occurred!")
-    }
+const HELLO: &str = "Hello, world!";
+
+#[allow(dead_code)]
+#[derive(Debug, Error)]
+enum Errorf {
+    #[error("Unknown result")]
+    UnknownResultError(String),
 }
 
 const fn hello() -> Result<&'static str, Errorf> {
-    let message = "Hello, world!";
+    let message = HELLO;
     Ok(message)
 }
 
