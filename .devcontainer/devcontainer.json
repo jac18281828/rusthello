@@ -12,8 +12,8 @@
 		"vscode": {
 			"extensions": [
 				"fill-labs.dependi",
-				"vadimcn.vscode-lldb",
-				"rust-lang.rust-analyzer"
+				"rust-lang.rust-analyzer",
+				"vadimcn.vscode-lldb"
 			]
 		}
 	}
